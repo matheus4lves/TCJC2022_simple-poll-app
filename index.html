@@ -6,6 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Poll App</title>
     <script src="index.js" defer></script>
+    <style>
+      .poll-app {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .button {
+        padding: 16px;
+        background: lightskyblue;
+        color: darkblue;
+        font-weight: 700;
+        font-size: 1.2rem;
+        font-family: Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 5px 5px 5px darkblue;
+        transition: all 0.5s;
+      }
+
+      .button:hover {
+        padding: 18px;
+        font-size: 1.4rem;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="poll-app">
+      <button class="button">Answer poll</button>
+    </div>
+  </body>
 </html>
