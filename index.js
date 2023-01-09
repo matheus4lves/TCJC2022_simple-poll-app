@@ -4,14 +4,35 @@ const poll = {
   // This generates [0, 0, 0, 0]. More in the next section!
   answers: new Array(4).fill(0),
   registerNewAnswer() {
-    const answer = window.prompt(`
-    What is your favorite programming language?
-    0: JavaScript
-    1: Python
-    2: Rust
-    3: C++
-    (Write option number)
+    // Question the user
+    let answer = window.prompt(`
+      What is your favorite programming language?
+      0: JavaScript
+      1: Python
+      2: Rust
+      3: C++
+      ( Write option number)
     `);
+
+    if (answer === null) return;
+
+    // Verify the answer
+    if (answer === "") {
+      alert("Write option number!");
+      this.registerNewAnswer();
+    } else {
+      // Convert the input into a number
+      answer = +answer;
+    }
+
+    if (Number.isInteger(answer) && answer >= 0 && answer < 4) {
+      this.answers[answer]++;
+      console.log(this.answers);
+      this.registerNewAnswer();
+    } else {
+      alert("Write option number!");
+      this.registerNewAnswer();
+    }
   },
 };
 
