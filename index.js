@@ -31,4 +31,8 @@ const poll = {
   },
 };
 
-poll.registerNewAnswer();
+const button = document.querySelector(".button");
+
+button.addEventListener("click", function () {
+  poll.registerNewAnswer();
+});
