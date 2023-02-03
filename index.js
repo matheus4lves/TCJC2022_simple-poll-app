@@ -43,3 +43,14 @@ const button = document.querySelector(".button");
 button.addEventListener("click", function () {
   poll.registerNewAnswer();
 });
+
+// Bonus
+const testData1 = {
+  answers: [5, 2, 3],
+};
+const testData2 = {
+  answers: [1, 5, 3, 9, 6, 1],
+};
+
+poll.displayResults.call(testData1, "array");
+poll.displayResults.call(testData2, "string");
