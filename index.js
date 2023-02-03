@@ -12,22 +12,29 @@ const poll = {
     if (answer === null) return;
 
     if (answer === "") {
+      answer = undefined;
       alert("Write option number!");
       this.registerNewAnswer();
-    } else {
-      // Convert the input into a number
-      answer = +answer;
     }
+    // Convert the input into a number
+    answer = +answer;
 
     // Update the array of answers
     if (Number.isInteger(answer) && answer >= 0 && answer < 4) {
       this.answers[answer]++;
-      console.log(this.answers);
-      this.registerNewAnswer();
-    } else {
+      this.displayResults("string");
+      return;
+    } else if (Number.isInteger(answer)) {
       alert("Write option number!");
       this.registerNewAnswer();
     }
+
+    return;
+  },
+
+  displayResults(type) {
+    if (type === "array") console.log(this.answers);
+    if (type === "string") console.log(`Poll results are ${this.answers.join(", ")}`);
   },
 };
 
