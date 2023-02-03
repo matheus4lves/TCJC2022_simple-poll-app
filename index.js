@@ -40,9 +40,7 @@ const poll = {
 
 const button = document.querySelector(".button");
 
-button.addEventListener("click", function () {
-  poll.registerNewAnswer();
-});
+button.addEventListener("click", poll.registerNewAnswer.bind(poll));
 
 // Bonus
 const testData1 = {
